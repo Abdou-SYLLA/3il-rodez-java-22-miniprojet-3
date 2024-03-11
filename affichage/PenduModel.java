@@ -8,16 +8,25 @@ public class PenduModel {
     private int tentativesRestantes;
 
     public PenduModel() {
-        motSecret = new GenerateurMot();
-        initialiserMotAffiche();
-        tentativesRestantes = 7;
+        nouvellePartie();
     }
 
     private void initialiserMotAffiche() {
         motAffiche = new StringBuilder();
+
         for (int i = 0; i < motSecret.getMot().length(); i++) {
-            motAffiche.append('_');
+            motAffiche.append("_ ");
         }
+
+        // Supprime le dernier espace pour que le dernier caractère ne soit pas suivi d'un espace
+        motAffiche.setLength(motAffiche.length() - 1);
+    }
+
+
+    public void nouvellePartie() {
+        motSecret = new GenerateurMot();
+        initialiserMotAffiche();
+        tentativesRestantes = 7;
     }
 
     public boolean estLettreCorrecte(char lettre) {
@@ -35,7 +44,7 @@ public class PenduModel {
     }
 
     public boolean estPartieGagnee() {
-        return motAffiche.toString().equals(motSecret);
+        return motAffiche.toString().equals(motSecret.getMot());
     }
 
     public boolean estPartiePerdue() {
@@ -49,5 +58,8 @@ public class PenduModel {
     public int getTentativesRestantes() {
         return tentativesRestantes;
     }
-}
 
+    public String getMotSecret() {
+        return motSecret.getMot();
+    }
+}
