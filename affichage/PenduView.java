@@ -136,6 +136,10 @@ public class PenduView {
         motProposerLabel.setText("Lettres proposées: " + letters);
     }
 
+    public void clear(){
+        motProposerLabel.setText("Lettres proposées: ");
+    }
+
     /**
      * Méthode pour afficher un message à l'utilisateur dans une boîte de dialogue.
      *

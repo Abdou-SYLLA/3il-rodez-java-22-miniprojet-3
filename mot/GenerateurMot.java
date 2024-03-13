@@ -13,7 +13,7 @@ public class GenerateurMot {
      * Constructeur de la classe GenerateurMot. Initialise l'objet LectureFichier et génère un mot aléatoire.
      */
     public GenerateurMot() {
-        this.monFichier = new LectureFichier(); // Initialisation de l'objet LectureFichier
+        this.monFichier = new LectureFichier(); // Initialisation du LectureFichier
         mot = monFichier.lireMotAleatoire(); // Génération du mot aléatoire à deviner
         ligne = monFichier.getLigne();
     }

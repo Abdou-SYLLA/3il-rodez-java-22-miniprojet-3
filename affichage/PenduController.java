@@ -68,6 +68,8 @@ public class PenduController {
             model.recommencerPartie(); // Réinitialiser le modèle pour recommencer une nouvelle partie
             view.setMotAffiche(model.getMotAffiche());
             view.setTentativesRestantes(model.getTentativesRestantes());
+            model.clear();
+            view.clear();
             // Réinitialiser l'affichage des lettres proposées
         }
     }

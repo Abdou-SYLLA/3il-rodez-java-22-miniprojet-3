@@ -13,7 +13,6 @@ public class PenduModel {
     private StringBuilder motAffiche; // Le mot affiché avec les lettres trouvées
 
     private List<Character> lettresProposees; // Les lettres déjà proposées par le joueur
-    private List<String> motsProposes; // La liste des mots déjà proposés par le joueur
     private int tentativesRestantes; // Le nombre de tentatives restantes pour deviner le mot
 
     /**
@@ -22,7 +21,6 @@ public class PenduModel {
     public PenduModel() {
         nouvellePartie(); // Initialisation d'une nouvelle partie
         lettresProposees = new ArrayList<>();
-        motsProposes = new ArrayList<>(); // Initialisation de la liste des mots déjà proposés
     }
 
     /**
@@ -149,21 +147,9 @@ public class PenduModel {
         nouvellePartie();
     }
 
-    /**
-     * Ajoute un mot à la liste des mots déjà proposés par le joueur.
-     *
-     * @param mot Le mot à ajouter
-     */
-    public void ajouterMotPropose(String mot) {
-        motsProposes.add(mot);
-    }
 
-    /**
-     * Récupère la liste des mots déjà proposés par le joueur.
-     *
-     * @return La liste des mots déjà proposés
-     */
-    public List<String> getMotsProposes() {
-        return motsProposes;
+
+    public void clear(){
+        lettresProposees = new ArrayList<>();
     }
 }
